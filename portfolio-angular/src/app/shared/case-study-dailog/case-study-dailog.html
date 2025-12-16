@@ -1,0 +1,146 @@
+<div class="dialog-header">
+  <h2>Building a Portfolio That Supports Both Angular & React</h2>
+  <button class="close" (click)="close()">✕</button>
+</div>
+<mat-dialog-content class="mat-typography">
+   <section>
+    <h3>Overview</h3>
+    <p>
+      Instead of choosing a single framework for my portfolio, I wanted to demonstrate how I think
+      as a frontend engineer, not just what I code in. This led me to design the portfolio as a
+      shell-based system where Angular and React coexist cleanly.
+    </p>
+  </section>
+
+  <section>
+    <h3>🧩 Problem</h3>
+    <p>I wanted my portfolio to:</p>
+    <ul>
+      <li>Showcase both Angular and React</li>
+      <li>Avoid duplicating UI or maintaining two separate sites</li>
+      <li>Keep frameworks independent, not mixed</li>
+      <li>Reflect real-world frontend architecture, not demos</li>
+    </ul>
+    <p>
+      Using iframes or separate deployments felt like shortcuts and didn’t align with how large
+      frontend systems are built.
+    </p>
+  </section>
+
+  <section>
+    <h3>🎯 Goal</h3>
+    <p>Create a single portfolio experience that:</p>
+    <ul>
+      <li>Uses Angular for structure and navigation</li>
+      <li>Loads React only when needed</li>
+      <li>Keeps ownership and lifecycle explicit</li>
+      <li>Is scalable and explainable in interviews</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>🏗️ Solution</h3>
+    <p>I implemented a Micro-Frontend architecture using Module Federation:</p>
+    <ul>
+      <li>Angular → Host / Shell</li>
+      <li>React (Vite) → Remote / Micro-frontend</li>
+    </ul>
+    <p>
+      React is loaded at runtime, only when the user navigates to the React section of the
+      portfolio. This keeps both frameworks:
+    </p>
+    <ul>
+      <li>Framework-native</li>
+      <li>Independently built</li>
+      <li>Independently reasoned about</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>🧠 Key Architectural Decisions</h3>
+    <p>1. Angular as the Shell</p>
+    <ul>
+      <li>Routing</li>
+      <li>Layout</li>
+      <li>Navigation</li>
+      <li>Lifecycle control</li>
+    </ul>
+    <p>This aligns with Angular’s strengths in structure and orchestration.</p>
+
+    <p>2. React as a Remote</p>
+    <ul>
+      <li>Exposes explicit mount and unmount functions</li>
+      <li>Does not auto-render</li>
+      <li>The host decides when and where it appears</li>
+    </ul>
+
+    <p>3. Explicit Lifecycle Control</p>
+    <ul>
+      <li>Angular mounts React when entering the route</li>
+      <li>Angular unmounts React on navigation</li>
+    </ul>
+    <p>This prevents memory leaks and keeps ownership clear.</p>
+
+    <p>4. Contract-Based Communication</p>
+    <ul>
+      <li>Data flows Angular → React via explicit props</li>
+      <li>No shared global state</li>
+      <li>No cross-framework imports</li>
+    </ul>
+    <p>This keeps the boundary clean and predictable.</p>
+  </section>
+
+  <section>
+    <h3>⚠️ Challenges & Learnings</h3>
+    <p>Tooling Mismatch</p>
+    <ul>
+      <li>Angular uses Webpack</li>
+      <li>React uses Vite (ESM)</li>
+    </ul>
+    <p>This required understanding:</p>
+    <ul>
+      <li>ESM vs script loading</li>
+      <li>Correct Module Federation configuration</li>
+      <li>Runtime behavior vs dev assumptions</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Runtime Debugging</h3>
+    <p>Several issues appeared only at runtime:</p>
+    <ul>
+      <li>Remote not loading due to port mismatch</li>
+      <li>Exposed file not matching the expected contract</li>
+      <li>Lifecycle functions unavailable due to incorrect exposure</li>
+    </ul>
+    <p>
+      Key lesson: Micro-frontends fail more often due to environment alignment than conceptual
+      mistakes.
+    </p>
+  </section>
+
+  <section>
+    <h3>✅ Outcome</h3>
+    <ul>
+      <li>Angular and React coexist cleanly</li>
+      <li>React loads only when required</li>
+      <li>Lifecycle and data flow are explicit</li>
+      <li>Portfolio reflects architectural thinking, not just UI skills</li>
+    </ul>
+    <p>
+      Key lesson: Micro-frontends fail more often due to environment alignment than conceptual
+      mistakes.
+    </p>
+  </section>
+  <section>
+    <h3>Summary</h3>
+    <p>
+      Designed a portfolio using Angular as a shell and React as a micro-frontend via Module
+      Federation, focusing on runtime loading, lifecycle control, and clean framework boundaries.
+    </p>
+  </section>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <!-- <button matButton mat-dialog-close>Cancel</button>
+  <button matButton [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+</mat-dialog-actions>

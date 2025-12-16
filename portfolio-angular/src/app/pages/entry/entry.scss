@@ -1,0 +1,107 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  min-height: 100vh;
+  padding: 4rem;
+  background: radial-gradient(800px circle at 80% 40%, rgba(255, 255, 255, 0.06), transparent 40%),
+    linear-gradient(180deg, #0f1115 0%, #0c0e12 100%);
+  color: #e6e6e6;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 640px;
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    button {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #e6e6e6;
+      padding: 0.75rem 1.25rem;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+
+      &:hover {
+        border-color: #ffffff;
+      }
+    }
+  }
+
+  .micro {
+    font-size: 0.9rem;
+    opacity: 0.7;
+
+    .link {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 320px;
+    border-radius: 12px;
+    transition: filter 0.25s ease, opacity 0.25s ease;
+    opacity: 0.9;
+
+    /* default */
+    filter: grayscale(25%) brightness(0.95);
+
+    &.angular {
+      filter: grayscale(0%) contrast(1.1);
+      opacity: 1;
+    }
+
+    &.react {
+      filter: grayscale(15%) brightness(1.05);
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0f1115 0%, #0c0e12 100%);
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-image {
+    display: none;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .actions button {
+    width: 100%;
+    text-align: center;
+  }
+}

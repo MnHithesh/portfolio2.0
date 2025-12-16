@@ -1,1 +1,36 @@
-<p>entry works!</p>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Building frontend systems, not just interfaces.</h1>
+
+    <p class="subtitle">Angular for structure. React for flexibility.</p>
+
+    <div class="actions">
+      <button
+        matButton
+        (mouseenter)="setMode('angular')"
+        (mouseleave)="resetMode()"
+        (click)="goAngular()"
+      >
+        Angular mindset →
+      </button>
+
+      <button
+        matButton
+        (mouseenter)="setMode('react')"
+        (mouseleave)="resetMode()"
+        (click)="goReact()"
+      >
+        React mindset →
+      </button>
+    </div>
+
+    <p class="micro">
+      Why this split?
+      <span class="link" (click)="openCaseStudy()"> Micro-frontend architecture </span>
+    </p>
+  </div>
+
+  <div class="hero-image">
+    <img src="assets/entry/ChatGPT.png" alt="Profile" [ngClass]="mode" />
+  </div>
+</section>
