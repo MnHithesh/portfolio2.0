@@ -9,7 +9,7 @@ export default defineConfig({
       name: "mfe1",
       filename: "remoteEntry.js",
       exposes: {
-        "./App": "./src/App.tsx",
+        "./App": "./src/bootstrap.tsx",
       },
       shared: ["react", "react-dom"],
     }),
@@ -18,5 +18,9 @@ export default defineConfig({
   build: {
     target: "esnext",
   },
-  server: { port: 3000 },
+
+  preview: {
+    port: 3000,
+    strictPort: true,
+  },
 });

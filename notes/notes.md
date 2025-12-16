@@ -95,3 +95,80 @@ React renders inside Angular shell
 User feels like it’s one app
 
 This is the “aha” moment of MFEs.
+
+Micro-frontends are not used everywhere.
+But where they are used, they matter a LOT.
+
+Think of it like this:
+Not a daily tool — but a career-defining one when it appears.
+Where Micro-frontends ARE widely used ✅
+They are common in large, long-living products where:
+Multiple teams work independently
+Different tech stacks coexist
+Apps evolve over years
+Deployment independence matters
+
+Real-world examples (patterns, not gossip)
+Enterprise dashboards
+Admin panels
+Large SaaS platforms
+Fintech / e-commerce back-office systems
+Internal tools at scale
+These are exactly the kinds of systems Angular + React coexist in.
+
+Where Micro-frontends are NOT used ❌
+Small websites
+Marketing landing pages
+Early startups
+Simple CRUD apps
+Single-team products
+And that’s okay.
+
+So what’s the REAL value of what you learned?
+It signals seniority, not framework knowledge
+
+Most frontend devs can say:
+
+“I know Angular / React”
+Very few can say:
+“I understand how to integrate them safely at runtime.”
+That difference matters.
+
+It shows architectural thinking
+What you demonstrated today:
+Runtime composition
+Ownership separation
+ESM vs script understanding
+Tooling mismatch debugging
+Lifecycle control
+This is architect-level thinking, not component-level.
+
+It’s a differentiator, not a checkbox
+On resumes, MFEs don’t work as:
+❌ “I know micro-frontends”
+They work as:
+✅ “I solved a real integration problem between frameworks.”
+
+That’s a story, not a buzzword.
+
+Career impact — very realistic view
+🚀 If you’re targeting:
+Role	Value
+Frontend Engineer (mid → senior)	  ⭐⭐⭐⭐
+UI Architect	                      ⭐⭐⭐⭐⭐
+Platform / Shell team	              ⭐⭐⭐⭐⭐
+Early startup dev	                  ⭐⭐
+Marketing UI roles	                ⭐
+
+
+Why unmounting matters (important context)
+Right now:
+
+Angular mounts React
+But when you navigate away from /react
+React stays alive in memory
+
+That leads to:
+Memory leaks
+Event listeners staying active
+Hidden bugs in real apps

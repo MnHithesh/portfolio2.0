@@ -6,7 +6,7 @@ const {
 module.exports = withModuleFederationPlugin({
   remoteType: 'module',
   remotes: {
-    mfe1: 'http://localhost:4173/assets/remoteEntry.js',
+    mfe1: 'http://localhost:3000/assets/remoteEntry.js',
   },
 
   shared: {

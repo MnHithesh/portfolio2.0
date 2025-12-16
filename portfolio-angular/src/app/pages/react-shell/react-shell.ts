@@ -7,16 +7,17 @@ import { Component, AfterViewInit, OnDestroy } from '@angular/core';
   styleUrl: './react-shell.scss',
 })
 export class ReactShell {
-  private reactRoot!: HTMLElement;
+  private mfe: any;
 
   async ngAfterViewInit() {
-    this.reactRoot = document.getElementById('react-root') as HTMLElement;
-
-    const mfe = await import('mfe1/App');
-    mfe.mount(this.reactRoot);
+    this.mfe = await import('mfe1/App');
+    const container = document.getElementById('react-root') as HTMLElement;
+    this.mfe.mount(container, { theme: 'dark', source: 'Angular Host' });
   }
 
   ngOnDestroy() {
-    // optional cleanup later
+    if(this.mfe?.unmount){
+      this.mfe.unmount();
+    }
   }
 }

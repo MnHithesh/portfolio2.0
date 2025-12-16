@@ -1,9 +1,24 @@
 // import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
-const mount = (el: HTMLElement) => {
-  ReactDOM.createRoot(el).render(<App />);
+let root: ReactDOM.Root | null = null;
+
+type Props = {
+  theme: string;
+  source: string;
 };
 
-export { mount };
+const mount = (el: HTMLElement, props: Props) => {
+  root = ReactDOM.createRoot(el);
+  root.render(<App {...props} />);
+};
+
+const unmount = () => {
+  if (root) {
+    root.unmount();
+    root = null;
+  }
+};
+
+export { mount, unmount };
