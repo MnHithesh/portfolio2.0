@@ -33,11 +33,11 @@ export class Entry {
     this.router.navigateByUrl('/react');
   }
 
-  openCaseStudy(){
+  openCaseStudy() {
     this.dialog.open(CaseStudyDailog, {
-  width: '800px',
-  maxWidth: '95vw',
-  panelClass: 'case-study-dialog',
-});
+      width: '800px',
+      maxWidth: '95vw',
+      panelClass: 'case-study-dialog',
+    });
   }
 }

@@ -1,107 +1,142 @@
 .hero {
+  position: relative;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  min-height: 100vh;
-  padding: 4rem;
-  background: radial-gradient(800px circle at 80% 40%, rgba(255, 255, 255, 0.06), transparent 40%),
-    linear-gradient(180deg, #0f1115 0%, #0c0e12 100%);
-  color: #e6e6e6;
   align-items: center;
+  padding: 4rem;
+  overflow: hidden;
+  color: #e6e6e6;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(900px circle at 80% 40%, rgba(255, 255, 255, 0.06), transparent 45%),
+    radial-gradient(700px circle at 10% 80%, rgba(255, 255, 255, 0.04), transparent 40%),
+    linear-gradient(180deg, #0f1115 0%, #0c0e12 100%);
+  z-index: 0;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 1;
   max-width: 640px;
+}
 
-  h1 {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
 
-  .subtitle {
-    font-size: 1.1rem;
-    opacity: 0.85;
-    margin-bottom: 2rem;
-  }
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 2.5rem;
+}
 
-  .actions {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
+.mindset-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
 
-    button {
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #e6e6e6;
-      padding: 0.75rem 1.25rem;
-      cursor: pointer;
-      transition: border-color 0.2s ease;
+.mindset-card {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
 
-      &:hover {
-        border-color: #ffffff;
-      }
-    }
-  }
+.mindset-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
 
-  .micro {
-    font-size: 0.9rem;
-    opacity: 0.7;
+.mindset-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.65;
+}
 
-    .link {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-  }
+.mindset-card .level {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.mindset-card:hover .level {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mindset-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.mindset-card.angular:hover {
+  box-shadow: inset 0 0 0 1px rgba(221, 0, 49, 0.25);
+}
+
+.mindset-card.react:hover {
+  box-shadow: inset 0 0 0 1px rgba(97, 218, 251, 0.25);
 }
 
 .hero-image {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
+}
 
-  img {
-    width: 320px;
-    border-radius: 12px;
-    transition: filter 0.25s ease, opacity 0.25s ease;
-    opacity: 0.9;
+.hero-image img {
+  width: 320px;
+  border-radius: 12px;
+  opacity: 0.95;
+  filter: grayscale(15%);
+}
 
-    /* default */
-    filter: grayscale(25%) brightness(0.95);
+.micro {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
 
-    &.angular {
-      filter: grayscale(0%) contrast(1.1);
-      opacity: 1;
-    }
-
-    &.react {
-      filter: grayscale(15%) brightness(1.05);
-      opacity: 1;
-    }
-  }
+.link {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
     padding: 2rem 1.5rem;
-    min-height: 100vh;
-    background: linear-gradient(180deg, #0f1115 0%, #0c0e12 100%);
   }
 
-  .subtitle {
-    font-size: 1rem;
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .mindset-wrapper {
+    flex-direction: column;
   }
 
   .hero-image {
     display: none;
   }
-
-  .actions {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .actions button {
-    width: 100%;
-    text-align: center;
-  }
 }
+
+.case-study-dialog .mat-dialog-container {
+  padding: 0;
+  border-radius: 14px;
+  background: #0f1115;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+

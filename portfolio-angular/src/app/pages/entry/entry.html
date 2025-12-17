@@ -1,36 +1,42 @@
 <section class="hero">
+  <div
+    class="hero-bg"
+    style="
+      background: url('/assets/entry/andrew-kliatskyi-ExB8K5vnHVE-unsplash.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    "
+  ></div>
   <div class="hero-content">
-    <h1>Building frontend systems, not just interfaces.</h1>
+    <h1>
+      Building frontend systems,<br />
+      not just interfaces.
+    </h1>
 
     <p class="subtitle">Angular for structure. React for flexibility.</p>
 
-    <div class="actions">
-      <button
-        matButton
-        (mouseenter)="setMode('angular')"
-        (mouseleave)="resetMode()"
-        (click)="goAngular()"
-      >
-        Angular mindset →
-      </button>
+    <div class="mindset-wrapper" (click)="goAngular()">
+      <div class="mindset-card angular">
+        <h3>Angular mindset <span class="level">→</span></h3>
+        <p>Structured, opinionated, systematic</p>
+        <p class="level">Experience: Advanced</p>
+      </div>
 
-      <button
-        matButton
-        (mouseenter)="setMode('react')"
-        (mouseleave)="resetMode()"
-        (click)="goReact()"
-      >
-        React mindset →
-      </button>
+      <div class="mindset-card react" (click)="goReact()">
+        <h3>React mindset <span class="level">→</span></h3>
+        <p>Adaptive, compositional, exploratory</p>
+        <p class="level">Experience: Intermediate</p>
+      </div>
     </div>
 
     <p class="micro">
       Why this split?
-      <span class="link" (click)="openCaseStudy()"> Micro-frontend architecture </span>
+      <span class="link" (click)="openCaseStudy()">Micro-frontend architecture</span>
     </p>
   </div>
 
   <div class="hero-image">
-    <img src="assets/entry/ChatGPT.png" alt="Profile" [ngClass]="mode" />
+    <img src="assets/entry/ChatGPT.png" alt="Profile" />
   </div>
 </section>
