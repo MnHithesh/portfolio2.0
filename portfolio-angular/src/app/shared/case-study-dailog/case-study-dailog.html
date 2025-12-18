@@ -137,6 +137,29 @@
     </p>
   </section>
   <section>
+    <h3 style="color: #ffffff">Architecture Overview</h3>
+
+    <div class="architecture-diagram">
+      <div class="box angular" style="color: #ffffff">
+        <strong>Angular Shell</strong>
+        <span>Routing</span>
+        <span>Layout</span>
+        <span>Navigation</span>
+        <span>Lifecycle control</span>
+      </div>
+
+      <div class="arrow" style="color: #ffffff">loads at runtime →</div>
+
+      <div class="box react" style="color: #ffffff">
+        <strong>React Micro-Frontend</strong>
+        <span>Vite build</span>
+        <span>Exposes mount / unmount</span>
+        <span>No auto-render</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <h3 style="color: #ffffff">Summary</h3>
     <p style="color: #ffffff">
       Designed a portfolio using Angular as a shell and React as a micro-frontend via Module
@@ -144,7 +167,4 @@
     </p>
   </section>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-  <!-- <button matButton mat-dialog-close>Cancel</button>
-  <button matButton [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
-</mat-dialog-actions>
+<mat-dialog-actions align="end"> </mat-dialog-actions>
