@@ -26,7 +26,7 @@ export class Entry {
   }
 
   goAngular() {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/context');
   }
 
   goReact() {

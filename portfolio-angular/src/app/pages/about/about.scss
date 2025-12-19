@@ -1,0 +1,54 @@
+/* Section base */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Inner width control */
+.section-inner {
+  max-width: 880px;
+  padding: 0 48px;
+}
+
+/* INTRODUCTION label */
+.section-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: #7a8a99;
+  margin-bottom: 24px;
+}
+
+/* Main headline */
+.about-title {
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.15;
+  font-weight: 400;
+  color: #e6e9ec;
+  margin-bottom: 32px;
+}
+
+/* Paragraphs */
+.about-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #9aa7b2;
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+
+/* Secondary text */
+.about-description.muted {
+  color: #7f8b95;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-inner {
+    padding: 0 24px;
+  }
+
+  .about-title {
+    font-size: 36px;
+  }
+}

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Work } from './work';
+import { SideNavLayout } from './side-nav-layout';
 
-describe('Work', () => {
-  let component: Work;
-  let fixture: ComponentFixture<Work>;
+describe('SideNavLayout', () => {
+  let component: SideNavLayout;
+  let fixture: ComponentFixture<SideNavLayout>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Work]
+      imports: [SideNavLayout]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Work);
+    fixture = TestBed.createComponent(SideNavLayout);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
