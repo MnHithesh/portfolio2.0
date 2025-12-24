@@ -1,30 +1,13 @@
 <mat-drawer-container class="shell-container">
-  <mat-drawer mode="side" opened class="sidebar">
-<aside class="side-nav">
-  <div class="profile">
-    <h1 class="name">Hithesh Nandeesh</h1>
-    <p class="role">Frontend Engineer</p>
-  </div>
-
-  <mat-vertical-stepper class="nav-stepper" [linear]="false" [selectedIndex]="activeIndex">
-    <mat-step label="About" (click)="scrollTo('about', 0)"></mat-step>
-    <mat-step label="Experience" (click)="scrollTo('experience', 1)"></mat-step>
-    <mat-step label="Projects" (click)="scrollTo('projects', 2)"></mat-step>
-    <mat-step label="Contact" (click)="scrollTo('contact', 3)"></mat-step>
-  </mat-vertical-stepper>
-
-  <div class="social">
-    <a href="https://github.com/MnHithesh" aria-label="GitHub"
-      ><img src="/assets/context/github.png" style="width: 40px; height: 40px"
-    /></a>
-    <a href="https://www.linkedin.com/in/hithesh-nandeesh-ab53a4158/" aria-label="LinkedIn"
-      ><img src="/assets/context/linkedin.png" style="width: 40px; height: 40px"
-    /></a>
-  </div>
-</aside>
-
+    <mat-drawer mode="side" opened class="sidebar">
+    <aside class="side-nav">
+      <div class="profile">
+        <h1 class="name">Hithesh Nandeesh</h1>
+        <p class="role">Frontend Engineer</p>
+      </div>
+    </aside>
   </mat-drawer>
-  <mat-drawer-content class="content">
-    <router-outlet></router-outlet>
+   <mat-drawer-content class="content">
+    <app-context></app-context>
   </mat-drawer-content>
 </mat-drawer-container>

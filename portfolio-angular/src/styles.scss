@@ -1,18 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
 
-html, body {
-  height: 100%;
-  overflow: auto;
-}
-
-* {
-  box-sizing: border-box;
-}
-
+html,
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #0e0e0e;
-  color: #eaeaea;
-  line-height: 1.6;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; // Lenis controls scroll
+  font-family: system-ui, sans-serif;
+}
+
+app-root {
+  display: block;
+  height: 100%;
 }
